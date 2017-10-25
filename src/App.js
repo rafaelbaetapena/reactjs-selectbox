@@ -5,7 +5,7 @@ import './App.css'
 import Selectbox from "./Selectbox.jsx"
 
 const data =[
-  {value: "1", text: "Teste1"},
+  {value: "1", text: "Teste221"},
   {value: "2", text: "Teste2"},
   {value: "3", text: "Teste3"},
   {value: "4", text: "Teste4"},
@@ -22,7 +22,7 @@ class App extends Component {
           <h1 className="App-title">Welcome to React</h1>
         </header>
         <div className="App-intro">
-          <Selectbox label="Produtos" data={data} />
+          <Selectbox label="Produtos" options={data}  />
         </div>
       </div>
     );
