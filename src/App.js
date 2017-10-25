@@ -2,9 +2,15 @@ import React, { Component } from 'react'
 import logo from './logo.svg'
 import './App.css'
 
-import $ from 'jquery'
+import Selectbox from "./Selectbox.jsx"
 
-import Combobox from "./Combobox.jsx"
+const data =[
+  {value: "1", text: "Teste1"},
+  {value: "2", text: "Teste2"},
+  {value: "3", text: "Teste3"},
+  {value: "4", text: "Teste4"},
+  {value: "5", text: "Teste5"},
+]
 
 class App extends Component {
 
@@ -16,7 +22,7 @@ class App extends Component {
           <h1 className="App-title">Welcome to React</h1>
         </header>
         <div className="App-intro">
-          <Combobox label="Produtos" />
+          <Selectbox label="Produtos" data={data} />
         </div>
       </div>
     );
