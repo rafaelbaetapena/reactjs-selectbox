@@ -4,7 +4,6 @@ const Selectbox = props => {
     const label = props.label
     const placeholder = props.placeholder
     const options = props.options
-    const onClick = props.onClick
     const p = (placeholder!==undefined) ? <option value="">{placeholder}</option> : null
 
     return (
@@ -14,7 +13,7 @@ const Selectbox = props => {
                 {p}
                 {options.map(
                     (v, i) => (
-                        <option key={v.value} value={v.value}>{v.text}</option>
+                        <option key={v.value} value={v.value}>{v.label}</option>
                     )
                 )}
             </select>
