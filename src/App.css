@@ -26,3 +26,11 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.text-red span{
+  color: red !important;
+}
+
+.text-green span{
+  color: green !important;
+}
