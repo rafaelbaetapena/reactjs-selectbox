@@ -7,29 +7,28 @@ import ReactSelect from 'react-select';
 import 'react-select/dist/react-select.css';
 
 const Selectbox = props => {
-    // label
-    const classNameLabel = props.classNameLabel
-    const label = props.label
     // select
     const classNameSelect = props.classNameSelect
     const name = props.name
     const value = props.value
+    const disabled = props.disabled
+    const noResultsText = (props.noResultsText === undefined) ? "Nenhum resultado encontrado" : props.noResultsText
+    const placeholder = (props.placeholder === undefined) ? "Selecione" : props.placeholder
+    const required = props.required
+    const searchable = props.searchable
+    const onChange = props.onChange
+    // multi
     const multi = props.multi
     const removeSelected = props.removeSelected
-    const isLoadingExternally = props.isLoadingExternally
-    const disabled = props.disabled
     const joinValues = props.joinValues
-    const noResultsText = "Nenhum resultado encontrado"
-    const placeholder = "Selecione"
-    const required = props.required
-    const searchable = props.searchables
-    const onChange = props.onChange
-
-    const isAsync = (props.loadOptions !== undefined)
-    const loadOptions = props.loadOptions
+    // no async
+    const isLoadingExternally = props.isLoadingExternally
     const options = props.options
-
-    const element = isAsync ?
+    // async
+    const loadOptions = props.loadOptions
+    const autoload = props.autoload
+    
+    const element = (props.loadOptions !== undefined) ?
         <ReactSelect.Async 
             className={classNameSelect}
             name={name}
@@ -44,7 +43,8 @@ const Selectbox = props => {
             placeholder={placeholder}
             required={required}
             searchable={searchable}
-            loadOptions={loadOptions} />
+            loadOptions={loadOptions}
+            autoload={autoload} />
         :
         <ReactSelect 
             className={classNameSelect}
@@ -65,8 +65,8 @@ const Selectbox = props => {
     return (
         <div>
             <Label 
-                className={classNameLabel}
-                label={label} />
+                className={props.classNameLabel}
+                label={props.label} />
             {element}
         </div>
     )

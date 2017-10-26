@@ -32,7 +32,10 @@ export default class Single extends Component {
                     name="Single"
                     value={value}
                     onChange={this.handleChange}
-                    options={FLAVOURS} />
+                    options={FLAVOURS}
+                    searchable={false}
+                    placeholder="Selecione o sabor"
+                    noResultsText="Nenhum sabor encontrado" />
             </div>
         )
     }

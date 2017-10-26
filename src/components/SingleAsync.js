@@ -39,7 +39,8 @@ export default class SingleAsync extends Component {
                 name="SingleAsync"
                 value={value}
                 onChange={this.handleChange}
-                loadOptions={this.getOptions} />
+                loadOptions={this.getOptions}
+                autoload={false} />
             </div>
         )
     }
