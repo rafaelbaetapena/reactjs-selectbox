@@ -19,7 +19,7 @@ const Selectbox = props => {
     const isLoadingExternally = props.isLoadingExternally
     const disabled = props.disabled
     const joinValues = props.joinValues
-    const noResultsText = "Nenhum resultado encontrado."
+    const noResultsText = "Nenhum resultado encontrado"
     const placeholder = "Selecione"
     const required = props.required
     const searchable = props.searchables
