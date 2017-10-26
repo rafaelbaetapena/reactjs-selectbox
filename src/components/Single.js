@@ -13,13 +13,14 @@ const FLAVOURS = [
 export default class Single extends Component {
     constructor(props){
         super(props)
-        this.state = { value: "Peppermint" }
+        this.state = { value: "peppermint" }
 
         this.handleChange = this.handleChange.bind(this)
     }
 
     handleChange (val){
-        this.setState({ ...this.state, value: val.value })
+        const value = val == null ? null : val.value
+        this.setState({ ...this.state, value: value })
     }
 
     render(){

@@ -10,7 +10,8 @@ export default class SingleAsync extends Component {
     }
 
     handleChange (val){
-        this.setState({ ...this.state, value: val.value })
+        const value = val == null ? null : val.value
+        this.setState({ ...this.state, value: value })
     }
 
     getOptions(input, callback) {
@@ -39,8 +40,7 @@ export default class SingleAsync extends Component {
                 name="SingleAsync"
                 value={value}
                 onChange={this.handleChange}
-                loadOptions={this.getOptions}
-                autoload={false} />
+                loadOptions={this.getOptions} />
             </div>
         )
     }

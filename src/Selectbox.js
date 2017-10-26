@@ -72,30 +72,4 @@ const Selectbox = props => {
     )
 }
 
-// const SelectboxAsync = props => {
-//     // label
-//     const classNameLabel = props.classNameLabel
-//     const label = props.label
-//     // select
-//     const classNameSelect = props.classNameSelect
-//     const name = props.name
-//     const value = props.value
-//     const loadOptions = props.loadOptions
-//     const onChange = props.onChange
-    
-//     return (
-//         <div>
-//             <Label 
-//                 className={classNameLabel}
-//                 label={label} />
-//             <ReactSelect.Async
-//                 className={classNameSelect}
-//                 name={name}
-//                 value={value}
-//                 onChange={onChange}
-//                  />
-//         </div>
-//     )
-// }
-
-export default Selectbox;
+export default Selectbox
