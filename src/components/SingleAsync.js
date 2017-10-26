@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Selectbox from "../Selectbox"
+import Selectbox from "./Selectbox"
 
 export default class SingleAsync extends Component {
     constructor(props){

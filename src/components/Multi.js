@@ -10,17 +10,19 @@ const FLAVOURS = [
 	{ label: 'Peppermint', value: 'peppermint' },
 ];
 
-export default class Single extends Component {
+export default class Multi extends Component {
     constructor(props){
         super(props)
-        this.state = { value: "peppermint" }
+        this.state = { value: ["peppermint"] }
 
         this.handleChange = this.handleChange.bind(this)
     }
 
-    handleChange (val){
-        const value = val == null ? null : val.value
-        this.setState({ ...this.state, value: value })
+    handleChange (val){ 
+        this.setState({ 
+            ...this.state, 
+            value: val.map(v => ( v.value )) 
+        })
     }
 
     render(){
@@ -29,14 +31,15 @@ export default class Single extends Component {
         return (
             <div>
                 <Selectbox
-                    label="Single"
-                    name="Single"
+                    label="Multi"
+                    name="Multi"
                     value={value}
                     onChange={this.handleChange}
                     options={FLAVOURS}
                     searchable={false}
                     placeholder="Selecione o sabor"
-                    noResultsText="Nenhum sabor encontrado" />
+                    noResultsText="Nenhum sabor encontrado"
+                    multi={true} />
             </div>
         )
     }

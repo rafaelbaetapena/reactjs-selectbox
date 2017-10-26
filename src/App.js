@@ -5,6 +5,8 @@ import './App.css'
 import Single from './components/Single'
 import SingleAsync from './components/SingleAsync'
 
+import Multi from './components/Multi'
+
 class App extends Component {
   render() {
     return (
@@ -20,6 +22,8 @@ class App extends Component {
           <Single />
           <br />
           <SingleAsync />
+          <br />
+          <Multi />
         </div>
       </div>
     )
