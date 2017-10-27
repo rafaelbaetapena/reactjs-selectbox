@@ -34,7 +34,7 @@ export default class Selectbox extends Component {
             loadOptions,
             autoload
         } = this.props
-        
+
         const element = isAsync ?
             <ReactSelect.Async 
                 className={classNameSelect}
@@ -109,7 +109,9 @@ Selectbox.propTypes = {
     name: PropTypes.string.isRequired,
     value: PropTypes.oneOfType([
         PropTypes.string,
-        PropTypes.arrayOf(PropTypes.string)
+        PropTypes.number,
+        PropTypes.arrayOf(PropTypes.string),
+        PropTypes.arrayOf(PropTypes.number)
     ]),
     disabled: PropTypes.bool,
     required: PropTypes.bool,
@@ -128,6 +130,14 @@ Selectbox.propTypes = {
         value: PropTypes.string.isRequired
     })),
     // select async
-    loadOptions: PropTypes.func,
+    loadOptions: function(props, propName, componentName) {
+        //console.log(props, propName, componentName)
+        let fn = props[propName]
+        if(fn === undefined) return
+
+        let r = fn().then(a => console.log(a))
+        console.log()
+    }, 
+    //PropTypes.func,
     autoload: PropTypes.bool,
 }

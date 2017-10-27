@@ -1,17 +1,21 @@
 import React, { Component } from 'react'
 import Selectbox from "../Global/Selectbox"
 
-export default class SingleAsync extends Component {
+export default class MultiAsync extends Component {
     constructor(props){
         super(props)
-        this.state = { value: 4 }
+        this.state = { 
+            value: [10, 12] 
+        }
 
         this.handleChange = this.handleChange.bind(this)
     }
 
     handleChange (val){
-        const value = val == null ? null : val.value
-        this.setState({ ...this.state, value: value })
+        this.setState({ 
+            ...this.state, 
+            value: val.map(v => ( v.value )) 
+        })
     }
 
     getOptions(input, callback) {
@@ -37,9 +41,10 @@ export default class SingleAsync extends Component {
             <div>
                 <Selectbox
                     isAsync={true}
+                    multi={true}
                     classNameSelect="custom-select"
-                    label="Single Async"
-                    name="SingleAsync"
+                    label="Multi Async"
+                    name="MultiAsync"
                     value={value}
                     onChange={this.handleChange}
                     loadOptions={this.getOptions} />

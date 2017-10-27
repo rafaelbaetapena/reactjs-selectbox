@@ -13,7 +13,9 @@ const FLAVOURS = [
 export default class Multi extends Component {
     constructor(props){
         super(props)
-        this.state = { value: ["peppermint"] }
+        this.state = { 
+            value: ["peppermint", "chocolate"] 
+        }
 
         this.handleChange = this.handleChange.bind(this)
     }
