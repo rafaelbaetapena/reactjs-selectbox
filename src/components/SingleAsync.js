@@ -4,7 +4,7 @@ import Selectbox from "./Selectbox"
 export default class SingleAsync extends Component {
     constructor(props){
         super(props)
-        this.state = { value: 4 }
+        this.state = { value: "4" }
 
         this.handleChange = this.handleChange.bind(this)
     }
@@ -15,7 +15,7 @@ export default class SingleAsync extends Component {
     }
 
     getOptions(input, callback) {
-        return fetch(`https://reqres.in/api/users?delay=3&per_page=20`)
+        return fetch(`https://reqres.in/api/users?delay=1&per_page=20`)
             .then((response) => {
                 return response.json()
             }).then((json) => {
@@ -36,12 +36,13 @@ export default class SingleAsync extends Component {
         return (
             <div>
                 <Selectbox
-                classNameSelect="custom-select"
-                label="Single Async"
-                name="SingleAsync"
-                value={value}
-                onChange={this.handleChange}
-                loadOptions={this.getOptions} />
+                    isAsync={true}
+                    classNameSelect="custom-select"
+                    label="Single Async"
+                    name="SingleAsync"
+                    value={value}
+                    onChange={this.handleChange}
+                    loadOptions={this.getOptions} />
             </div>
         )
     }
