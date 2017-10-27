@@ -123,10 +123,11 @@ Selectbox.propTypes = {
     joinValues: PropTypes.bool,
     // select no async
     isLoadingExternally: PropTypes.bool,
-    //options: PropTypes.arrayOf(),
+    options: PropTypes.arrayOf(PropTypes.shape({
+        label: PropTypes.string.isRequired,
+        value: PropTypes.string.isRequired
+    })),
     // select async
     loadOptions: PropTypes.func,
     autoload: PropTypes.bool,
 }
-
-//export default Selectbox
