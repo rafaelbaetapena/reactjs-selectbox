@@ -15,7 +15,7 @@ export default class SingleAsync extends Component {
     }
 
     getOptions(input, callback) {
-        return fetch(`https://reqres.in/api/users?per_page=20`)
+        return fetch(`https://reqres.in/api/users?delay=3&per_page=20`)
             .then((response) => {
                 return response.json()
             }).then((json) => {
