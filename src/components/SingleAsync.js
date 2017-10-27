@@ -36,6 +36,7 @@ export default class SingleAsync extends Component {
         return (
             <div>
                 <Selectbox
+                classNameSelect="custom-select"
                 label="Single Async"
                 name="SingleAsync"
                 value={value}

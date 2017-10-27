@@ -34,7 +34,6 @@ export default class Single extends Component {
                     value={value}
                     onChange={this.handleChange}
                     options={FLAVOURS}
-                    searchable={false}
                     placeholder="Selecione o sabor"
                     noResultsText="Nenhum sabor encontrado" />
             </div>

@@ -20,6 +20,7 @@
     "react-pdf": "^1.8.3",
     "react-redux": "^5.0.5",
     "react-router-dom": "^4.1.1",
+    "react-select": "^1.0.0-rc.10",
     "react-slick": "^0.14.11",
     "react-tap-event-plugin": "^2.0.1",
     "redux": "^3.7.1",
