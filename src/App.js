@@ -2,10 +2,9 @@ import React, { Component } from 'react'
 import logo from './logo.svg'
 import './App.css'
 
-import Single from './components/Single'
-import SingleAsync from './components/SingleAsync'
-
-import Multi from './components/Multi'
+import Single from './components/Example/Single'
+import SingleAsync from './components/Example/SingleAsync'
+import Multi from './components/Example/Multi'
 
 class App extends Component {
   render() {

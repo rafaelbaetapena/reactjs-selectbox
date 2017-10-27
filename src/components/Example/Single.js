@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Selectbox from "./Selectbox"
+import Selectbox from "../Global/Selectbox"
 
 const FLAVOURS = [
 	{ label: 'Chocolate', value: 'chocolate' },
@@ -10,19 +10,17 @@ const FLAVOURS = [
 	{ label: 'Peppermint', value: 'peppermint' },
 ];
 
-export default class Multi extends Component {
+export default class Single extends Component {
     constructor(props){
         super(props)
-        this.state = { value: ["peppermint"] }
+        this.state = { value: "peppermint" }
 
         this.handleChange = this.handleChange.bind(this)
     }
 
-    handleChange (val){ 
-        this.setState({ 
-            ...this.state, 
-            value: val.map(v => ( v.value )) 
-        })
+    handleChange (val){
+        const value = val == null ? null : val.value
+        this.setState({ ...this.state, value: value })
     }
 
     render(){
@@ -31,15 +29,13 @@ export default class Multi extends Component {
         return (
             <div>
                 <Selectbox
-                    label="Multi"
-                    name="Multi"
+                    label="Single"
+                    name="Single"
                     value={value}
                     onChange={this.handleChange}
                     options={FLAVOURS}
-                    searchable={false}
                     placeholder="Selecione o sabor"
-                    noResultsText="Nenhum sabor encontrado"
-                    multi={true} />
+                    noResultsText="Nenhum sabor encontrado" />
             </div>
         )
     }
