@@ -130,14 +130,6 @@ Selectbox.propTypes = {
         value: PropTypes.string.isRequired
     })),
     // select async
-    loadOptions: function(props, propName, componentName) {
-        //console.log(props, propName, componentName)
-        let fn = props[propName]
-        if(fn === undefined) return
-
-        let r = fn().then(a => console.log(a))
-        console.log()
-    }, 
-    //PropTypes.func,
+    loadOptions: PropTypes.func,
     autoload: PropTypes.bool,
 }

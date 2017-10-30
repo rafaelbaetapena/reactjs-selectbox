@@ -5,10 +5,18 @@ export default class MultiAsync extends Component {
     constructor(props){
         super(props)
         this.state = { 
-            value: [10, 12] 
+            value: [10, 12],
+            disabled: true
         }
-
+        this.handleChangeDisabled = this.handleChangeDisabled.bind(this)
         this.handleChange = this.handleChange.bind(this)
+    }
+
+    handleChangeDisabled (e) {
+        this.setState({
+            ...this.state,
+            disabled: e.target.checked
+        })
     }
 
     handleChange (val){
@@ -36,18 +44,27 @@ export default class MultiAsync extends Component {
 
     render(){
         const value = this.state.value
+        const disabled = this.state.disabled
 
         return (
             <div>
-                <Selectbox
-                    isAsync={true}
-                    multi={true}
-                    classNameSelect="custom-select"
-                    label="Multi Async"
-                    name="MultiAsync"
-                    value={value}
-                    onChange={this.handleChange}
-                    loadOptions={this.getOptions} />
+                <div>
+                    <Selectbox
+                        isAsync={true}
+                        multi={true}
+                        classNameSelect="custom-select"
+                        label="Multi Async"
+                        name="MultiAsync"
+                        value={value}
+                        onChange={this.handleChange}
+                        loadOptions={this.getOptions}
+                        disabled={disabled} />
+                </div>
+                <div>
+                    <label className="checkbox">
+                        <input type="checkbox" checked={disabled} name="disabled" onChange={this.handleChangeDisabled} /> Disabled
+                    </label>
+                </div>
             </div>
         )
     }
